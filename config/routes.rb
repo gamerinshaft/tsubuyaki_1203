@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get 'registrations/new'
-
+  resources :registrations, only: [:new, :create]
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
