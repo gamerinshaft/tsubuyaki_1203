@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   resources :registrations, only: [:new, :create]
-  resources :users
+  resources :users, only: [:index, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'registrations#new'
