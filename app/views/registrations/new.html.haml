@@ -19,6 +19,7 @@
     = f.password_field :password_confirmation
   %p
     = f.submit
-
+- @user.errors.each do |attr, message|
+  .alert.alert-danger= "attr:#{attr}, message: #{message}"
 %p
   = flash[:debug]
