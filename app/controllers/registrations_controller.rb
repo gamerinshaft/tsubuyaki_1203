@@ -5,6 +5,6 @@ class RegistrationsController < ApplicationController
 
   def create
     # raise Exception.new(params[:user])
-    redirect_to new_registration_path
+    redirect_to new_registration_path, flash: {debug: params[:user]}
   end
 end

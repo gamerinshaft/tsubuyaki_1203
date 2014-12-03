@@ -2,6 +2,23 @@
 %p Find me in app/views/registrations/new.html.haml
 
 = form_for @user, url: registrations_path, method: :post do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.submit
+  %p
+    = f.label :name
+    = f.text_field :name
+  %p
+    = f.label :email
+    = f.email_field :email
+  %p
+    = f.label :bio
+    = f.text_area :bio
+  %p
+    = f.label :password
+    = f.password_field :password
+  %p
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  %p
+    = f.submit
+
+%p
+  = flash[:debug]
