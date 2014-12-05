@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tweets
+
   resources :users, only: [:index, :show]
   resource :registrations, only: [:new, :create]
   resource :sessions, only: [:new, :create, :destroy]
