@@ -1,6 +1,10 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_user_path(@user)
-\|
-= link_to 'Back', users_path
+.col-xs-8#users-content
+  - if notice
+    .alert.alert-info= notice
+  .user-info
+    %span.user-name
+      = render_user_name(@user)
+    %span.user-id
+      @#{@user.name}
+    .bio
+      = @user.bio

@@ -8,11 +8,16 @@ class SessionsController < ApplicationController
     password = params_user[:password]
 
     if login(email, password)
-      redirect_to root_url, notice: "successful!"
+      redirect_to users_url, notice: "successful!"
     else
       @user = User.new( email: email)
       render :new
     end
+  end
+
+  def destroy
+    logout
+    redirect_to root_url
   end
 
   def params_user

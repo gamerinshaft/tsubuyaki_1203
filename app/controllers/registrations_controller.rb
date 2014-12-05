@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
     # raise Exception.new(params[:user])
     @user = User.new(params_user)
     if @user.save
-      redirect_to root_url, flash: {debug: "collect!->" + params[:user].to_s}
+      redirect_to users_path, flash: {debug: "collect!->" + params[:user].to_s}
     else
       render :new, flash: {debug: "false"}
     end
